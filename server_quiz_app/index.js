@@ -8,7 +8,7 @@ app.use(express.json())
 
 const port = 3000
 
-const openai = new OpenAIApi({ apiKey: process.env.OPEN_AI_KEY });
+//const openai = new OpenAIApi({ apiKey: process.env.OPEN_AI_KEY });
 
 app.get('/', (req, res) => {
  res.send('Hello World!')
@@ -19,27 +19,18 @@ app.listen(port, () => {
 })
 
 app.get('/api/questions', async (req, res) => {
-    console.log('requested questions')
-    const response = await openai.completions.create({
-       model: "gpt-3.5-turbo",
-       prompt: "generate  10 questions about universe and 4 answer choices for each, must be in json format with question: String and answers: [String] form.",
-      max_tokens: 505,
-    });
-    console.log(response.data)
+    //console.log('requested questions')
+    //const response = await openai.completions.create({
+    //   model: "gpt-3.5-turbo",
+    //   prompt: "generate  10 questions about universe and 4 answer choices for each, must be in json format with question: String and answers: [String] form.",
+    //  max_tokens: 505,
+    //});
+    //console.log(response.data)
     res.json(questions)
 })
 
 
 const questions = [
-    {
-      "question": "cutest boy on earth?",
-      "answers": [
-        "Omar",
-        "5hihi",
-        "10,000 years",
-        "sude"
-      ]
-    },
     {
       "question": "What is the name of the theory that explains the rapid expansion of the universe after the Big Bang?",
       "answers": [
