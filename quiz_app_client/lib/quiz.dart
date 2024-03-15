@@ -15,7 +15,7 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   List<String> selectedAnswers = [];
   var activeScreen = 'start-screen';
-  var questionCount = 10;
+  var questionCount = 9;
   Questions? questionsWidget;
 
   void switchScreen() {
